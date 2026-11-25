@@ -1,0 +1,177 @@
+/* Component Checker stylesheet template. Double-brace names are replaced from the active palette in ui/theme.py */
+
+* {
+    font-family: "Segoe UI", "Inter", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    color: {{text}};
+}
+
+QMainWindow, QWidget#Root { background: {{bg}}; }
+QWidget { background: transparent; }
+QScrollArea { border: none; background: transparent; }
+QScrollArea > QWidget > QWidget { background: transparent; }
+
+QToolTip {
+    background: {{surface_alt}}; color: {{text}};
+    border: 1px solid {{border}}; padding: 6px 8px;
+}
+
+/* ---------- sidebar ---------- */
+QFrame#Sidebar { background: {{surface}}; border-right: 1px solid {{border}}; }
+QLabel#Logo { font-size: 20px; font-weight: 800; }
+QLabel#LogoSub { color: {{text_muted}}; font-size: 11px; }
+QLabel#SidebarNote { color: {{text_muted}}; font-size: 11px; }
+
+QPushButton#NavButton {
+    text-align: left; padding: 11px 14px; border: none; border-radius: 10px;
+    color: {{text_muted}}; font-weight: 600; background: transparent;
+}
+QPushButton#NavButton:hover { background: {{surface_alt}}; color: {{text}}; }
+QPushButton#NavButton:checked { background: {{primary_soft}}; color: {{primary}}; }
+
+QPushButton#ThemeButton {
+    text-align: left; padding: 10px 14px; border: 1px solid {{border}}; border-radius: 10px;
+    color: {{text}}; font-weight: 600; background: {{surface}};
+}
+QPushButton#ThemeButton:hover { background: {{surface_alt}}; }
+
+/* ---------- text ---------- */
+QLabel#PageTitle { font-size: 24px; font-weight: 800; }
+QLabel#PageSubtitle { color: {{text_muted}}; font-size: 13px; }
+QLabel#SectionTitle { font-size: 15px; font-weight: 700; }
+QLabel#CardTitle { font-size: 14px; font-weight: 700; }
+QLabel#Muted { color: {{text_muted}}; }
+QLabel#Small { color: {{text_muted}}; font-size: 11px; }
+QLabel#Mono {
+    font-family: "Cascadia Mono", "Consolas", "DejaVu Sans Mono", monospace;
+    font-size: 13px;
+}
+QLabel#MonoBig {
+    font-family: "Cascadia Mono", "Consolas", "DejaVu Sans Mono", monospace;
+    font-size: 15px; font-weight: 700;
+}
+QLabel#SpecKey { color: {{text_muted}}; }
+QLabel#SpecValue { font-weight: 600; }
+QLabel#CategoryTag { color: {{primary}}; font-size: 11px; font-weight: 700; }
+
+/* ---------- buttons ---------- */
+QPushButton#PrimaryButton {
+    background: {{primary}}; color: {{primary_text}}; border: none; border-radius: 10px;
+    padding: 10px 18px; font-weight: 700;
+}
+QPushButton#PrimaryButton:hover { background: {{primary_hover}}; }
+QPushButton#PrimaryButton:pressed { background: {{primary}}; }
+
+QPushButton#SecondaryButton {
+    background: {{surface}}; color: {{text}}; border: 1px solid {{border}}; border-radius: 10px;
+    padding: 10px 16px; font-weight: 600;
+}
+QPushButton#SecondaryButton:hover { background: {{surface_alt}}; }
+QPushButton#SecondaryButton::menu-indicator { image: none; width: 0px; }
+
+QPushButton:focus, QComboBox:focus { border: 1px solid {{primary}}; }
+QPushButton#NavButton:focus { border: none; }
+
+QMenu {
+    background: {{surface}}; border: 1px solid {{border}}; border-radius: 10px; padding: 6px;
+}
+QMenu::item { padding: 8px 16px; border-radius: 6px; }
+QMenu::item:selected { background: {{primary_soft}}; color: {{primary}}; }
+
+/* ---------- cards ---------- */
+QFrame#Card, QFrame#SpecCard {
+    background: {{surface}}; border: 1px solid {{border}}; border-radius: 14px;
+}
+QFrame#SpecCard { background: {{surface}}; }
+QFrame#Divider { background: {{border}}; max-height: 1px; min-height: 1px; border: none; }
+
+/* ---------- inputs ---------- */
+QComboBox {
+    background: {{input_bg}}; border: 1px solid {{border}}; border-radius: 10px;
+    padding: 8px 36px 8px 12px; min-height: 22px;
+}
+QComboBox:hover { border: 1px solid {{primary}}; }
+QComboBox::drop-down { border: none; width: 32px; subcontrol-origin: padding; subcontrol-position: center right; }
+QComboBox::down-arrow { image: url({{arrow_icon}}); width: 12px; height: 12px; }
+QComboBox QAbstractItemView {
+    background: {{surface}}; border: 1px solid {{border}}; border-radius: 8px; padding: 4px;
+    selection-background-color: {{primary_soft}}; selection-color: {{primary}}; outline: none;
+}
+
+QCheckBox { spacing: 8px; }
+QCheckBox::indicator {
+    width: 18px; height: 18px; border: 1px solid {{border}}; border-radius: 5px; background: {{input_bg}};
+}
+QCheckBox::indicator:hover { border: 1px solid {{primary}}; }
+QCheckBox::indicator:checked { background: {{primary}}; border: 1px solid {{primary}}; image: url({{check_icon}}); }
+
+QProgressBar {
+    background: {{surface_alt}}; border: none; border-radius: 4px; max-height: 8px; min-height: 8px;
+    text-align: center; color: transparent;
+}
+QProgressBar::chunk { background: {{primary}}; border-radius: 4px; }
+
+/* ---------- banner / rule cards / pills ---------- */
+QFrame#Banner { border-radius: 14px; border: 1px solid {{border}}; background: {{neutral_bg}}; }
+QFrame#Banner[tone="ok"] { background: {{ok_bg}}; border: 1px solid {{ok}}; }
+QFrame#Banner[tone="bad"] { background: {{bad_bg}}; border: 1px solid {{bad}}; }
+QFrame#Banner[tone="warn"] { background: {{warn_bg}}; border: 1px solid {{warn}}; }
+QFrame#Banner[tone="neutral"] { background: {{neutral_bg}}; border: 1px solid {{neutral}}; }
+
+QLabel#BannerTitle { font-size: 22px; font-weight: 800; }
+QLabel#BannerTitle[tone="ok"] { color: {{ok}}; }
+QLabel#BannerTitle[tone="bad"] { color: {{bad}}; }
+QLabel#BannerTitle[tone="warn"] { color: {{warn}}; }
+QLabel#BannerTitle[tone="neutral"] { color: {{text}}; }
+
+QFrame#RuleCard {
+    background: {{surface}}; border: 1px solid {{border}}; border-left: 4px solid {{neutral}}; border-radius: 12px;
+}
+QFrame#RuleCard[tone="ok"] { border-left: 4px solid {{ok}}; }
+QFrame#RuleCard[tone="bad"] { border-left: 4px solid {{bad}}; }
+QFrame#RuleCard[tone="warn"] { border-left: 4px solid {{warn}}; }
+QFrame#RuleCard[tone="neutral"] { border-left: 4px solid {{neutral}}; }
+
+QLabel#Pill {
+    border-radius: 9px; padding: 3px 10px; font-size: 11px; font-weight: 800;
+    background: {{neutral_bg}}; color: {{text_muted}};
+}
+QLabel#Pill[tone="ok"] { background: {{ok_bg}}; color: {{ok}}; }
+QLabel#Pill[tone="bad"] { background: {{bad_bg}}; color: {{bad}}; }
+QLabel#Pill[tone="warn"] { background: {{warn_bg}}; color: {{warn}}; }
+QLabel#Pill[tone="neutral"] { background: {{neutral_bg}}; color: {{text_muted}}; }
+
+QLabel#GroupTitle { font-size: 14px; font-weight: 800; }
+QLabel#GroupTitle[tone="ok"] { color: {{ok}}; }
+QLabel#GroupTitle[tone="bad"] { color: {{bad}}; }
+QLabel#GroupTitle[tone="warn"] { color: {{warn}}; }
+QLabel#GroupTitle[tone="neutral"] { color: {{text_muted}}; }
+
+QLabel#Disclaimer {
+    color: {{text_muted}}; font-size: 12px; background: {{surface_alt}};
+    border-radius: 10px; padding: 10px 12px;
+}
+
+/* ---------- tables ---------- */
+QTableWidget, QTableView {
+    background: {{surface}}; border: 1px solid {{border}}; border-radius: 10px;
+    gridline-color: {{border}}; alternate-background-color: {{surface_alt}};
+    selection-background-color: {{primary_soft}}; selection-color: {{text}}; outline: none;
+}
+QTableWidget::item { padding: 6px 8px; }
+QHeaderView::section {
+    background: {{surface_alt}}; color: {{text_muted}}; border: none;
+    border-bottom: 1px solid {{border}}; padding: 8px; font-weight: 700;
+}
+QTableCornerButton::section { background: {{surface_alt}}; border: none; }
+
+/* ---------- scrollbars ---------- */
+QScrollBar:vertical { background: transparent; width: 10px; margin: 2px; }
+QScrollBar::handle:vertical { background: {{border}}; border-radius: 4px; min-height: 30px; }
+QScrollBar::handle:vertical:hover { background: {{text_muted}}; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical { background: transparent; }
+QScrollBar:horizontal { background: transparent; height: 10px; margin: 2px; }
+QScrollBar::handle:horizontal { background: {{border}}; border-radius: 4px; min-width: 30px; }
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0px; }
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal { background: transparent; }
