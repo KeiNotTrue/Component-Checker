@@ -1,1 +1,1 @@
-"""Component Checker core: hardware data, relations and propositional logic (no GUI code)."""
+"""SystemX core: hardware data, relations and propositional logic (no GUI code)."""

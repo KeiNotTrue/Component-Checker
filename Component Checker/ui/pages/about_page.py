@@ -24,7 +24,7 @@ class AboutPage(QWidget):
         root = QVBoxLayout(self)
         root.setContentsMargins(28, 24, 28, 24)
         root.setSpacing(14)
-        root.addWidget(make_label("About Component Checker", "PageTitle"))
+        root.addWidget(make_label("About SystemX", "PageTitle"))
         root.addWidget(make_label("Computer Component Compatibility Checker · Discrete Mathematics final project",
                                   "PageSubtitle"))
 
@@ -35,7 +35,7 @@ class AboutPage(QWidget):
         layout = holder.column
 
         layout.addWidget(_section("What it does", [
-            "Component Checker helps beginners check whether the PC parts they picked will work together: CPU, "
+            "SystemX helps beginners check whether the PC parts they picked will work together: CPU, "
             "motherboard, RAM, GPU, power supply, storage and case.",
         ]))
         layout.addWidget(_section("The Discrete Mathematics behind it", [

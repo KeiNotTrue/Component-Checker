@@ -29,7 +29,7 @@ BUILDER, RESULTS, MATH, ABOUT = range(4)
 class MainWindow(QMainWindow):
     def __init__(self, catalog: Catalog | None = None):
         super().__init__()
-        self.setWindowTitle("Component Checker · Computer Component Compatibility Checker")
+        self.setWindowTitle("SystemX · Computer Component Compatibility Checker")
         self.resize(1240, 780)
         self.setMinimumSize(980, 640)
 
@@ -67,7 +67,7 @@ class MainWindow(QMainWindow):
         layout.setContentsMargins(16, 22, 16, 18)
         layout.setSpacing(6)
 
-        layout.addWidget(make_label("Component Checker", "Logo"))
+        layout.addWidget(make_label("SystemX", "Logo"))
         layout.addWidget(make_label("Compatibility Checker", "LogoSub"))
         layout.addSpacing(18)
 

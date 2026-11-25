@@ -1,4 +1,4 @@
-# Component Checker - Computer Component Compatibility Checker
+# SystemX - Computer Component Compatibility Checker
 
 Discrete Mathematics final project, BSIT 2-1, Pamantasan ng Lungsod ng Valenzuela (PLV).
 A desktop app (Python + PySide6 + QSS) that tells a beginner whether the PC parts they picked will work together,

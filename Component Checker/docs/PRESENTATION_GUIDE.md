@@ -1,6 +1,6 @@
-# Component Checker presentation guide (about 7-10 minutes)
+# SystemX presentation guide (about 7-10 minutes)
 
-1. **Problem (1 min)** - Beginners buy parts that do not fit or work together. Component Checker checks the combination first.
+1. **Problem (1 min)** - Beginners buy parts that do not fit or work together. SystemX checks the combination first.
 2. **Demo - good build (1 min)** - Builder > Load Sample > "Budget AM4" > Check. Point at the green banner and the 8 TRUE rules.
 3. **Demo - bad build (2 min)** - Load "Underpowered PSU" > Check. Show the red banner, the power card
    (491 W x 1.2 = 590 W -> 650 W needed, PSU is 550 W) and the FALSE rules T and U with reasons.

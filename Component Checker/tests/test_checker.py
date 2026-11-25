@@ -1,4 +1,4 @@
-"""Tests for the Component Checker core logic (no GUI needed).
+"""Tests for the SystemX core logic (no GUI needed).
 
 Run from the project folder with:   python -m unittest discover -s tests -v
 """

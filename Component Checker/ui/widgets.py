@@ -11,7 +11,7 @@ from core.models import CATEGORY_LABELS, Component
 from . import theme
 
 DISCLAIMER = (
-    "Results are based only on the specifications and rules stored in Component Checker's sample catalog. "
+    "Results are based only on the specifications and rules stored in SystemX's sample catalog. "
     "They do not cover every real-world factor (BIOS versions, CPU cooler clearance, PSU length, "
     "cable lengths, and so on), so always confirm with the manufacturers before buying parts."
 )

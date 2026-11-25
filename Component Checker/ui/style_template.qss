@@ -1,4 +1,4 @@
-/* Component Checker stylesheet template. Double-brace names are replaced from the active palette in ui/theme.py */
+/* SystemX stylesheet template. Double-brace names are replaced from the active palette in ui/theme.py */
 
 * {
     font-family: "Segoe UI", "Inter", "Noto Sans", "Helvetica Neue", Arial, sans-serif;

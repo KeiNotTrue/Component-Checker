@@ -49,7 +49,7 @@ TONE_ICONS = {
     "neutral": "fa5s.minus-circle",
 }
 
-_settings = QSettings("Component Checker", "Component Checker")
+_settings = QSettings("SystemX", "SystemX")
 _current = "dark"
 
 

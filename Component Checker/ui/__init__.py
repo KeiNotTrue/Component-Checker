@@ -1,1 +1,1 @@
-"""Component Checker user interface (PySide6)."""
+"""SystemX user interface (PySide6)."""
