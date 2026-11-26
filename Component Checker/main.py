@@ -22,3 +22,6 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+print("SystemX is a hardware component checker and cataloging tool. It is designed to help users identify and manage their computer components efficiently.")
