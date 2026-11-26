@@ -1,11 +1,14 @@
 """Main window: sidebar navigation + stacked pages + light/dark theme toggle."""
 from __future__ import annotations
 
+from pathlib import Path
+
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
-    QApplication, QButtonGroup, QFrame, QHBoxLayout, QMainWindow, QPushButton, QStackedWidget,
+    QApplication, QButtonGroup, QFrame, QHBoxLayout, QLabel, QMainWindow, QPushButton, QStackedWidget,
     QVBoxLayout, QWidget,
 )
+from PySide6.QtGui import QPixmap
 
 from core.catalog import Catalog
 from core.checker import CompatibilityChecker
@@ -30,6 +33,11 @@ class MainWindow(QMainWindow):
     def __init__(self, catalog: Catalog | None = None):
         super().__init__()
         self.setWindowTitle("SystemX · Computer Component Compatibility Checker")
+        logo_path = Path(__file__).resolve().parent.parent / "logo.png"
+        logo = QPixmap(str(logo_path))
+        if not logo.isNull():
+            self.setWindowIcon(logo)
+            QApplication.instance().setWindowIcon(logo)
         self.resize(1240, 780)
         self.setMinimumSize(980, 640)
 
@@ -67,8 +75,28 @@ class MainWindow(QMainWindow):
         layout.setContentsMargins(16, 22, 16, 18)
         layout.setSpacing(6)
 
-        layout.addWidget(make_label("SystemX", "Logo"))
-        layout.addWidget(make_label("Compatibility Checker", "LogoSub"))
+        header = QWidget()
+        header_layout = QHBoxLayout(header)
+        header_layout.setContentsMargins(0, 0, 0, 0)
+        header_layout.setSpacing(10)
+
+        logo_label = QLabel()
+        logo_label.setFixedSize(46, 46)
+        logo_label.setScaledContents(True)
+        logo_path = Path(__file__).resolve().parent.parent / "logo.png"
+        logo_label.setPixmap(QPixmap(str(logo_path)).scaled(
+            46, 46, Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation
+        ))
+        header_layout.addWidget(logo_label)
+
+        brand = QWidget()
+        brand_layout = QVBoxLayout(brand)
+        brand_layout.setContentsMargins(0, 0, 0, 0)
+        brand_layout.setSpacing(0)
+        brand_layout.addWidget(make_label("SystemX", "Logo"))
+        brand_layout.addWidget(make_label("Compatibility Checker", "LogoSub"))
+        header_layout.addWidget(brand, 1)
+        layout.addWidget(header)
         layout.addSpacing(18)
 
         self.nav_group = QButtonGroup(self)
